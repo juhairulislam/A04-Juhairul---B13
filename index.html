@@ -72,15 +72,15 @@
         </div>
 
 
-        <!-- 3 button all interview and Rejected -->
+        <!-- 3 button , all interview and Rejected -->
 
         <div class="mb-6 ">
-            <button class="bg-[#3B82F6] text-white px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3"
-                id="all-filter-btn">All</button>
-            <button class=" text-[#64748B] px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3"
-                id="thriving-filter-btn">Interview</button>
-            <button class="  text-[#64748B] px-2 md:px-6 py-1 rounded shadow"
-                id="struggling-filter-btn">Rejected</button>
+            <button id="all-showing-btn" onclick="allJobsShowing('all-showing-btn')"  class="bg-[#3B82F6] text-white px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3"
+               >All</button>
+            <button id="interview-showing-btn" onclick="noJobsAvailable('interview-showing-btn')" class=" text-[#64748B] px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3"
+                >Interview</button>
+            <button id="rejected-showing-btn" onclick="noJobsAvailable('rejected-showing-btn')" class="  text-[#64748B] px-2 md:px-6 py-1 rounded shadow"
+               >Rejected</button>
         </div>
 
 
@@ -490,6 +490,28 @@
 
         </section>
 
+
+
+
+        <!-- No jobs available section -->
+
+        <section id="no-jobs-available" class="flex flex-col items-center text-center p-20 shadow mb-4 hidden ">
+
+
+            <div class="text-center">
+                <img src="./jobs.png" alt="">
+            </div>
+
+
+            <div class="">
+                <p class="mt-4 font-semibold">No jobs available</p>
+                <p class="text-[#64748B] text-[13px]">Check back soon for new job opportunities</p>
+            </div>
+
+
+
+        </section>
+
     </main>
 
 
@@ -497,7 +519,7 @@
 
 
 
-
+<script src="./script.js"></script>
 </body>
 
 </html>
