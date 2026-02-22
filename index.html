@@ -15,11 +15,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- Internal Css -->
     <style>
         * {
             font-family: "Geist", sans-serif;
+
         }
     </style>
 
@@ -69,13 +75,65 @@
         <!-- 3 button all interview and Rejected -->
 
         <div class="mb-6 ">
-            <button class="bg-[#3B82F6] text-white px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3" id="all-filter-btn">All</button>
-            <button class=" text-[#64748B] px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3" id="thriving-filter-btn">Interview</button>
-            <button class="  text-[#64748B] px-2 md:px-6 py-1 rounded shadow" id="struggling-filter-btn">Rejected</button>
+            <button class="bg-[#3B82F6] text-white px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3"
+                id="all-filter-btn">All</button>
+            <button class=" text-[#64748B] px-2 md:px-6 py-1 rounded shadow mr-1 md:mr-3"
+                id="thriving-filter-btn">Interview</button>
+            <button class="  text-[#64748B] px-2 md:px-6 py-1 rounded shadow"
+                id="struggling-filter-btn">Rejected</button>
         </div>
 
 
         <section id="allCards" class="space-y-5">
+
+            <!-- card 1 -->
+
+            <div class="flex justify-between p-7 shadow rounded">
+
+                <!-- part 1 -->
+                <div class="space-y-5">
+
+                    <!-- 1 -->
+
+                    <div class="">
+                        <p class="font-semibold text-[18px]">Mobile First Corp</p>
+                        <p class="text-[#64748B] text-[15px]">React Native Developer</p>
+                    </div>
+
+                    <!-- 2 -->
+                    <div>
+
+                        <p class=" text-[#64748B] text-[13px]">Remote
+                            •
+                            Full-time
+                            •
+                            $130,000 - $175,000</p>
+
+                    </div>
+
+                    <!-- 3 -->
+                    <div>
+                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <p class="mt-2 text-[14px]">Build cross-platform mobile applications using React Native. Work on
+                            products used by millions of users worldwide.</p>
+                    </div>
+
+                    <!-- 4 Interview and rejected btn -->
+
+                    <div class="flex gap-3">
+                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button class="btn btn-outline btn-error">REJECTED</button>
+                    </div>
+                </div>
+
+                <!-- part 2 -->
+
+                <div>
+                    <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+            </div>
 
 
         </section>
