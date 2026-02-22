@@ -1,9 +1,27 @@
+let total = document.getElementById('total') ;
+let interviewCount = document.getElementById('interview-count');
+let rejectedCount = document.getElementById('rejected-count')
+
+
+
+
+
+
 
 const allBtn = document.getElementById('all-showing-btn') ;
 const interviewShowingBtn = document.getElementById('interview-showing-btn');
 const rejectedShowingBtn = document.getElementById('rejected-showing-btn') ;
 const allCards = document.getElementById('allCards')
 const noJobAvailable = document.getElementById('no-jobs-available')
+
+
+// count 
+
+function calculateCount(){
+    total.innerText = allCards.children.length ;
+}
+
+calculateCount()
 
 
 
