@@ -68,7 +68,7 @@
             <div class="font-semibold text-[20px]">
                 <h2>Available Jobs</h2>
             </div>
-            <div class="text-[#64748B] font-medium">8 jobs</div>
+            <div  class="text-[#64748B] font-medium"> <span id="jobs-count">8</span> jobs</div>
         </div>
 
 
@@ -88,7 +88,7 @@
 
             <!-- card 1 -->
 
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-1"  class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -128,8 +128,8 @@
 
                 <!-- part 2 -->
 
-                <div>
-                    <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
+                <div id="delete-btn-1">
+                    <button  class=" px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -138,7 +138,7 @@
 
             <!-- card 2 -->
 
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-2" class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -178,8 +178,8 @@
 
                 <!-- part 2 -->
 
-                <div>
-                    <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
+                <div id="delete-btn-2">
+                    <button  class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -188,7 +188,7 @@
 
 
             <!-- card 3 -->
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-3" class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -229,8 +229,8 @@
 
                 <!-- part 2 -->
 
-                <div>
-                    <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
+                <div id="delete-btn-3">
+                    <button  class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -238,7 +238,7 @@
 
 
             <!-- card 4 -->
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-4" class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -278,7 +278,7 @@
 
                 <!-- part 2 -->
 
-                <div>
+                <div  id="delete-btn-4">
                     <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
@@ -287,7 +287,7 @@
 
 
             <!-- card 5 -->
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-5" class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -327,7 +327,7 @@
 
                 <!-- part 2 -->
 
-                <div>
+                <div id="delete-btn-5" >
                     <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
@@ -337,7 +337,7 @@
 
             <!-- card 6 -->
 
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-6" class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -378,8 +378,8 @@
 
                 <!-- part 2 -->
 
-                <div>
-                    <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
+                <div id="delete-btn-6">
+                    <button  class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -389,7 +389,7 @@
 
             <!-- card 7 -->
 
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-7" class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -429,8 +429,8 @@
 
                 <!-- part 2 -->
 
-                <div>
-                    <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
+                <div id="delete-btn-7">
+                    <button  class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -439,7 +439,7 @@
 
 
             <!-- card 8 -->
-            <div class="flex justify-between p-7 shadow rounded">
+            <div id="card-8" class="flex justify-between p-7 shadow rounded">
 
                 <!-- part 1 -->
                 <div class="space-y-5">
@@ -480,8 +480,8 @@
 
                 <!-- part 2 -->
 
-                <div>
-                    <button class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
+                <div id="delete-btn-8">
+                    <button  class="px-1.5 py-1 w-full border border-gray-200 rounded-full"><i
                             class="fa-regular fa-trash-can"></i></button>
                 </div>
 
@@ -489,6 +489,9 @@
 
 
         </section>
+
+
+
 
 
 
@@ -512,13 +515,16 @@
 
         </section>
 
+
+
+        
     </main>
 
 
 
 
 
-
+<script src="./deleteEvent.js"></script>
 <script src="./script.js"></script>
 </body>
 

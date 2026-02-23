@@ -1,6 +1,7 @@
 let total = document.getElementById('total') ;
 let interviewCount = document.getElementById('interview-count');
-let rejectedCount = document.getElementById('rejected-count')
+let rejectedCount = document.getElementById('rejected-count') ;
+
 
 
 
@@ -22,6 +23,8 @@ function calculateCount(){
 }
 
 calculateCount()
+
+
 
 
 
@@ -74,3 +77,5 @@ function allJobsShowing(id){
     selected.classList.add('bg-[#3B82F6]', 'text-white')
 
 }
+
+
