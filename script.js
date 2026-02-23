@@ -49,8 +49,13 @@ function noJobsAvailable(id){
 
     const selected = document.getElementById(id) ;
 
-    selected.classList.remove('text-[#64748B]')
-    selected.classList.add('bg-[#3B82F6]', 'text-white')
+    selected.classList.remove('text-[#64748B]') ;
+    selected.classList.add('bg-[#3B82F6]', 'text-white') ;
+     totalJobCount.innerText =  `${interviewStore.children.length} Jobs` ;
+      document.getElementById('all-showing-btn').addEventListener('click' , function(){
+            
+            totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+        })
 
     
 }

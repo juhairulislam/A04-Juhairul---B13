@@ -35,11 +35,11 @@
 
 <body>
 
-    <header class="w-[80%] mx-auto">
+    <header class="w-[80%] mx-auto ">
 
         <h1 class="text-2xl md:text-3xl font-bold mt-6 ">Job Application Tracker</h1>
 
-        <div class="grid grid-cols-3 gap-6">
+        <div class="grid grid-cols-3 gap-6 ">
 
             <div class="p-4 rounded-md shadow my-5 ">
                 <p class="font-semibold">Total</p>
@@ -82,6 +82,15 @@
             <button id="rejected-showing-btn" onclick="noJobsAvailable('rejected-showing-btn')" class="  text-[#64748B] px-2 md:px-6 py-1 rounded shadow"
                >Rejected</button>
         </div>
+
+
+
+
+         <!-- interview store cart -->
+
+        <section id="interview-store" class="space-y-10 mb-10 hidden">
+
+        </section>
 
 
         <section id="allCards" class="space-y-10 mb-10">
@@ -166,7 +175,7 @@
 
                     <!-- 3 -->
                     <div>
-                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <button id="status-btn-2" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
                         <p class="mt-2 text-[14px]">Create stunning web experiences for high-profile clients. Must have
                             portfolio and experience with modern web design trends.</p>
                     </div>
@@ -174,7 +183,7 @@
                     <!-- 4 Interview and rejected btn -->
 
                     <div class="flex gap-3">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="interview-btn-2" class="btn btn-outline btn-success">INTERVIEW</button>
                         <button class="btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
@@ -218,7 +227,7 @@
 
                     <!-- 3 -->
                     <div>
-                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <button id="status-btn-3" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
                         <p class="mt-2 text-[14px]">Transform complex data into compelling visualizations. Required
                             skills: D3.js, React, and strong analytical thinking.
                         </p>
@@ -227,7 +236,7 @@
                     <!-- 4 Interview and rejected btn -->
 
                     <div class="flex gap-3">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="interview-btn-3" class="btn btn-outline btn-success">INTERVIEW</button>
                         <button class="btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
@@ -270,7 +279,7 @@
 
                     <!-- 3 -->
                     <div>
-                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <button id="status-btn-4" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
                         <p class="mt-2 text-[14px]">Design and maintain scalable backend systems using Python and AWS.
                             Work with modern DevOps practices and cloud infrastructure.</p>
                     </div>
@@ -278,7 +287,7 @@
                     <!-- 4 Interview and rejected btn -->
 
                     <div class="flex gap-3">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="interview-btn-4" class="btn btn-outline btn-success">INTERVIEW</button>
                         <button class="btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
@@ -321,7 +330,7 @@
 
                     <!-- 3 -->
                     <div>
-                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <button id="status-btn-5" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
                         <p class="mt-2 text-[14px]">Create beautiful and functional user interfaces for our suite of
                             products. Strong design skills and frontend development expertise required.</p>
                     </div>
@@ -329,7 +338,7 @@
                     <!-- 4 Interview and rejected btn -->
 
                     <div class="flex gap-3">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="interview-btn-5" class="btn btn-outline btn-success">INTERVIEW</button>
                         <button class="btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
@@ -373,7 +382,7 @@
 
                     <!-- 3 -->
                     <div>
-                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <button id="status-btn-6" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
                         <p class="mt-2 text-[14px]">Build enterprise applications with JavaScript and modern frameworks.
                             We offer competitive compensation, health insurance, and professional development
                             opportunities.</p>
@@ -382,7 +391,7 @@
                     <!-- 4 Interview and rejected btn -->
 
                     <div class="flex gap-3">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="interview-btn-6" class="btn btn-outline btn-success">INTERVIEW</button>
                         <button class="btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
@@ -427,7 +436,7 @@
 
                     <!-- 3 -->
                     <div>
-                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <button id="status-btn-7" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
                         <p class="mt-2 text-[14px]">Join our fast-growing startup and work on our core platform.
                             Experience with Node.js and React required. Great benefits and equity package included.</p>
                     </div>
@@ -435,7 +444,7 @@
                     <!-- 4 Interview and rejected btn -->
 
                     <div class="flex gap-3">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="interview-btn-7" class="btn btn-outline btn-success">INTERVIEW</button>
                         <button class="btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
@@ -479,7 +488,7 @@
 
                     <!-- 3 -->
                     <div>
-                        <button id="status-btn" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
+                        <button id="status-btn-8" class="bg-gray-200 px-3 py-2 rounded  text-md">NOT APPLIED</button>
                         <p class="mt-2 text-[14px]">We are looking for an experienced Frontend Developer to build
                             scalable web applications using React and TypeScript. You will work with a talented team on
                             cutting-edge projects.</p>
@@ -488,7 +497,7 @@
                     <!-- 4 Interview and rejected btn -->
 
                     <div class="flex gap-3">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="interview-btn-8" class="btn btn-outline btn-success">INTERVIEW</button>
                         <button class="btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
@@ -533,11 +542,7 @@
 
 
 
-        <!-- interview store cart -->
-
-        <section id="interview-store" class="space-y-10 mb-10 hidden">
-
-        </section>
+       
 
 
 
