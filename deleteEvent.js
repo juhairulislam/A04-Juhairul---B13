@@ -20,6 +20,11 @@ document.getElementById('delete-btn-1').addEventListener('click' , function(){
 
    total.innerText = Number(total.innerText) - 1 ;
    deleteCount.innerText = Number(deleteCount.innerText) - 1;
+
+   if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
+
    card1.classList.add('hidden')
 
 
@@ -34,6 +39,10 @@ document.getElementById('delete-btn-2').addEventListener('click' , function(){
    total.innerText = Number(total.innerText) - 1 ;
     deleteCount.innerText = Number(deleteCount.innerText) - 1;
 
+    if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
+
     card2.classList.add('hidden')
  
 
@@ -46,6 +55,10 @@ document.getElementById('delete-btn-3').addEventListener('click' , function(){
    total.innerText = Number(total.innerText) - 1 ;
     deleteCount.innerText = Number(deleteCount.innerText) - 1;
 
+    if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
+
  card3.classList.add('hidden') 
 
 
@@ -56,6 +69,10 @@ document.getElementById('delete-btn-4').addEventListener('click' , function(){
 
    total.innerText = Number(total.innerText) - 1 ;
     deleteCount.innerText = Number(deleteCount.innerText) - 1;
+
+    if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
 
  card4.classList.add('hidden') 
 
@@ -68,6 +85,10 @@ document.getElementById('delete-btn-5').addEventListener('click' , function(){
    total.innerText = Number(total.innerText) - 1 ;
     deleteCount.innerText = Number(deleteCount.innerText) - 1;
 
+    if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
+
  card5.classList.add('hidden') 
 
 
@@ -78,6 +99,10 @@ document.getElementById('delete-btn-6').addEventListener('click' , function(){
 
    total.innerText = Number(total.innerText) - 1 ;
     deleteCount.innerText = Number(deleteCount.innerText) - 1;
+
+    if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
 
  card6.classList.add('hidden') 
 
@@ -90,6 +115,10 @@ document.getElementById('delete-btn-7').addEventListener('click' , function(){
    total.innerText = Number(total.innerText) - 1 ;
     deleteCount.innerText = Number(deleteCount.innerText) - 1;
 
+    if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
+
  card7.classList.add('hidden') 
 
 
@@ -101,9 +130,19 @@ document.getElementById('delete-btn-8').addEventListener('click' , function(){
    total.innerText = Number(total.innerText) - 1 ;
     deleteCount.innerText = Number(deleteCount.innerText) - 1;
 
+    if(deleteCount.innerText === '0'){
+    noJobAvailable.classList.remove('hidden')
+   }
+
  card8.classList.add('hidden') 
 
 
 })
+
+
+
+
+
+
 
 
