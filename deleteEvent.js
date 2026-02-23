@@ -22,7 +22,8 @@ document.getElementById('delete-btn-1').addEventListener('click' , function(){
    deleteCount.innerText = Number(deleteCount.innerText) - 1;
 
    if(deleteCount.innerText === '0'){
-    noJobAvailable.classList.remove('hidden')
+    noJobAvailable.classList.remove('hidden') ;
+    
    }
 
    card1.classList.add('hidden')
