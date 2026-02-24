@@ -28,6 +28,9 @@ const divCreate8 = document.createElement('div')
 
 
 
+
+
+
 // interview 1
 
 document.getElementById('interview-btn-1').addEventListener('click', function () {
@@ -49,6 +52,25 @@ document.getElementById('interview-btn-1').addEventListener('click', function ()
     interviewCount.innerText = interviewStore.children.length ;
 
 
+
+    document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
+            
+            interviewStore.classList.add('hidden');
+
+            totalJobCount.innerText =  `${rejectStore.children.length } of 8 Jobs`;
+
+            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+                interviewStore.classList.remove('hidden');
+            })
+
+
+        })
+
+
+
+    
+
+
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
         noJobAvailable.classList.add('hidden');
@@ -64,25 +86,7 @@ document.getElementById('interview-btn-1').addEventListener('click', function ()
             
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
         })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
-            interviewStore.classList.add('hidden');
-
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
-
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
-                interviewStore.classList.remove('hidden');
-            })
-
-
-
-            
-
-            
-
-
-
-        })
+        
     } 
 
 
@@ -116,6 +120,21 @@ document.getElementById('interview-btn-2').addEventListener('click', function ()
     interviewCount.innerText = interviewStore.children.length ;
 
 
+
+     document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
+            
+            interviewStore.classList.add('hidden');
+
+            totalJobCount.innerText =  `${rejectStore.children.length } of 8 Jobs`;
+
+            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+                interviewStore.classList.remove('hidden');
+            })
+
+
+        })
+
+
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
         noJobAvailable.classList.add('hidden');
@@ -131,25 +150,7 @@ document.getElementById('interview-btn-2').addEventListener('click', function ()
             
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
         })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
-            interviewStore.classList.add('hidden');
-
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
-
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
-                interviewStore.classList.remove('hidden');
-            })
-
-
-
-            
-
-            
-
-
-
-        })
+       
     } 
 
 
