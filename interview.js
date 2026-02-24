@@ -8,7 +8,7 @@ let sb6 = document.getElementById('status-btn-6');
 let sb7 = document.getElementById('status-btn-7');
 let sb8 = document.getElementById('status-btn-8');
 
-let interviewStore = document.getElementById('interview-store') ;
+let interviewStore = document.getElementById('interview-store');
 
 let totalJobCount = document.getElementById('total-job-count')
 
@@ -49,52 +49,199 @@ document.getElementById('interview-btn-1').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+
+    // If user press reject button after pressing interview button ... new---1
+
+    document.getElementById('reject-btn-1').addEventListener('click', function () {
+
+        card1.classList.remove('border-l-4', 'border-l-green-400');
+        card1.classList.add('border-l-4', 'border-l-red-400')
+        sb1.innerText = 'REJECTED';
+
+        sb1.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb1.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
 
 
 
-    document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
-            interviewStore.classList.add('hidden');
+        interviewShowingBtn.addEventListener('click', function () {
 
-            totalJobCount.innerText =  `${rejectStore.children.length } of 8 Jobs`;
+            if (interviewStore.children.length === 0) {
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
                 interviewStore.classList.remove('hidden');
-            })
-
+                rejectStore.classList.add('hidden')
+            }
 
         })
 
 
 
-    
+
+
+    })
+
+
+
+    document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
+        interviewStore.classList.add('hidden');
+
+        totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`;
+
+        document.getElementById('interview-showing-btn').addEventListener('click', function () {
+            interviewStore.classList.remove('hidden');
+        })
+
+
+    })
+
+
+
+
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
-        noJobAvailable.classList.add('hidden');
+
         
 
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
 
 
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+        // if user press reject button in interview showing button section new ----2
+
+
+        document.getElementById('reject-btn-1').addEventListener('click', function () {
+
+            card1.classList.remove('border-l-4', 'border-l-green-400');
+            card1.classList.add('border-l-4', 'border-l-red-400')
+            sb1.innerText = 'REJECTED';
+
+            sb1.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb1.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
+
+
+
+        noJobAvailable.classList.add('hidden');
+
+
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+
+
+
+            // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-1').addEventListener('click', function () {
+
+                card1.classList.remove('border-l-4', 'border-l-green-400');
+                card1.classList.add('border-l-4', 'border-l-red-400')
+                sb1.innerText = 'REJECTED';
+
+                sb1.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb1.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate);
+
+                interviewStore.classList.add('hidden');
+
+                // rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
         })
-        
-    } 
+
+    }
 
 
 
     )
 
+        // if user press delete after adding reject new----4
+
+    document.getElementById('delete-btn-1').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
    
-    
+
+
+
 })
 
 
@@ -117,48 +264,188 @@ document.getElementById('interview-btn-2').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+
+      // If user press reject button after pressing interview button ...new---1
+
+    document.getElementById('reject-btn-2').addEventListener('click', function () {
+
+        card2.classList.remove('border-l-4', 'border-l-green-400');
+        card2.classList.add('border-l-4', 'border-l-red-400')
+        sb2.innerText = 'REJECTED';
+
+        sb2.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb2.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate2);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
 
 
 
-     document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
-            interviewStore.classList.add('hidden');
+        interviewShowingBtn.addEventListener('click', function () {
 
-            totalJobCount.innerText =  `${rejectStore.children.length } of 8 Jobs`;
+            if (interviewStore.children.length === 0) {
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
                 interviewStore.classList.remove('hidden');
-            })
-
+                rejectStore.classList.add('hidden')
+            }
 
         })
+
+
+
+
+
+    })
+
+
+
+
+    document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
+        interviewStore.classList.add('hidden');
+
+        totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`;
+
+        document.getElementById('interview-showing-btn').addEventListener('click', function () {
+            interviewStore.classList.remove('hidden');
+        })
+
+
+    })
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
-        noJobAvailable.classList.add('hidden');
+
+
         
-
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
-
+        // if user press reject button in interview showing button section new ----2
 
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+        document.getElementById('reject-btn-2').addEventListener('click', function () {
+
+            card2.classList.remove('border-l-4', 'border-l-green-400');
+            card2.classList.add('border-l-4', 'border-l-red-400')
+            sb2.innerText = 'REJECTED';
+
+            sb2.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb2.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate2);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
+        noJobAvailable.classList.add('hidden');
+
+
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+
+
+               // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-2').addEventListener('click', function () {
+
+                card2.classList.remove('border-l-4', 'border-l-green-400');
+                card2.classList.add('border-l-4', 'border-l-red-400')
+                sb2.innerText = 'REJECTED';
+
+                sb2.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb2.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate2);
+
+                interviewStore.classList.add('hidden');
+
+                rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
+
+
+            
         })
-       
-    } 
+
+    }
 
 
 
     )
 
-   
-    
+    // if user press delete after adding reject new----4
+
+    document.getElementById('delete-btn-2').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
 })
 
 
@@ -184,51 +471,191 @@ document.getElementById('interview-btn-3').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+
+       // If user press reject button after pressing interview button ...new---1
+
+    document.getElementById('reject-btn-3').addEventListener('click', function () {
+
+        card3.classList.remove('border-l-4', 'border-l-green-400');
+        card3.classList.add('border-l-4', 'border-l-red-400')
+        sb3.innerText = 'REJECTED';
+
+        sb3.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb3.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate3);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
+
+
+
+        interviewShowingBtn.addEventListener('click', function () {
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+        })
+
+
+
+
+
+    })
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
+
+          // if user press reject button in interview showing button section new ----2
+
+
+        document.getElementById('reject-btn-3').addEventListener('click', function () {
+
+            card3.classList.remove('border-l-4', 'border-l-green-400');
+            card3.classList.add('border-l-4', 'border-l-red-400')
+            sb3.innerText = 'REJECTED';
+
+            sb3.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb3.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate3);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
         noJobAvailable.classList.add('hidden');
-        
-
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
 
 
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
-        })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
+
+
             
+               // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-3').addEventListener('click', function () {
+
+                card3.classList.remove('border-l-4', 'border-l-green-400');
+                card3.classList.add('border-l-4', 'border-l-red-400')
+                sb3.innerText = 'REJECTED';
+
+                sb3.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb3.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate3);
+
+                interviewStore.classList.add('hidden');
+
+                rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
+
+        })
+        document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
             interviewStore.classList.add('hidden');
 
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
+            totalJobCount.innerText = `${interviewStore.children.length - interviewStore.children.length} Jobs`;
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+            document.getElementById('interview-showing-btn').addEventListener('click', function () {
                 interviewStore.classList.remove('hidden');
             })
 
 
 
-            
 
-            
+
+
 
 
 
         })
-    } 
+    }
 
 
 
     )
 
-   
-    
+
+        // if user press delete after adding reject new----4
+
+    document.getElementById('delete-btn-3').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
+
+
+
 })
 
 
@@ -251,51 +678,186 @@ document.getElementById('interview-btn-4').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+
+        // If user press reject button after pressing interview button ...new---1
+
+    document.getElementById('reject-btn-4').addEventListener('click', function () {
+
+        card4.classList.remove('border-l-4', 'border-l-green-400');
+        card4.classList.add('border-l-4', 'border-l-red-400')
+        sb4.innerText = 'REJECTED';
+
+        sb4.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb4.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate4);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
+
+
+
+        interviewShowingBtn.addEventListener('click', function () {
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+        })
+
+
+
+
+
+    })
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
+
+
+           // if user press reject button in interview showing button section new ----2
+
+
+        document.getElementById('reject-btn-4').addEventListener('click', function () {
+
+            card4.classList.remove('border-l-4', 'border-l-green-400');
+            card4.classList.add('border-l-4', 'border-l-red-400')
+            sb4.innerText = 'REJECTED';
+
+            sb4.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb4.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate4);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
         noJobAvailable.classList.add('hidden');
-        
-
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
 
 
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+
+
+               // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-4').addEventListener('click', function () {
+
+                card4.classList.remove('border-l-4', 'border-l-green-400');
+                card4.classList.add('border-l-4', 'border-l-red-400')
+                sb4.innerText = 'REJECTED';
+
+                sb4.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb4.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate4);
+
+                interviewStore.classList.add('hidden');
+
+                rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
         })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
+        document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
             interviewStore.classList.add('hidden');
 
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
+            totalJobCount.innerText = `${interviewStore.children.length - interviewStore.children.length} Jobs`;
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+            document.getElementById('interview-showing-btn').addEventListener('click', function () {
                 interviewStore.classList.remove('hidden');
             })
 
 
 
-            
 
-            
+
+
 
 
 
         })
-    } 
+    }
 
 
 
     )
 
-   
-    
+
+     document.getElementById('delete-btn-4').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
+
 })
 
 
@@ -316,51 +878,186 @@ document.getElementById('interview-btn-5').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+        // If user press reject button after pressing interview button ...new---1
+
+    document.getElementById('reject-btn-5').addEventListener('click', function () {
+
+        card5.classList.remove('border-l-4', 'border-l-green-400');
+        card5.classList.add('border-l-4', 'border-l-red-400')
+        sb5.innerText = 'REJECTED';
+
+        sb5.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb5.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate5);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
+
+
+
+        interviewShowingBtn.addEventListener('click', function () {
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+        })
+
+
+
+
+
+    })
+
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
+
+             // if user press reject button in interview showing button section new ----2
+
+
+        document.getElementById('reject-btn-5').addEventListener('click', function () {
+
+            card5.classList.remove('border-l-4', 'border-l-green-400');
+            card5.classList.add('border-l-4', 'border-l-red-400')
+            sb5.innerText = 'REJECTED';
+
+            sb5.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb5.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate5);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
         noJobAvailable.classList.add('hidden');
-        
-
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
 
 
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+
+                 // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-5').addEventListener('click', function () {
+
+                card5.classList.remove('border-l-4', 'border-l-green-400');
+                card5.classList.add('border-l-4', 'border-l-red-400')
+                sb5.innerText = 'REJECTED';
+
+                sb5.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb5.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate5);
+
+                interviewStore.classList.add('hidden');
+
+                rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
         })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
+        document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
             interviewStore.classList.add('hidden');
 
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
+            totalJobCount.innerText = `${interviewStore.children.length - interviewStore.children.length} Jobs`;
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+            document.getElementById('interview-showing-btn').addEventListener('click', function () {
                 interviewStore.classList.remove('hidden');
             })
 
 
 
-            
 
-            
+
+
 
 
 
         })
-    } 
+    }
 
 
 
     )
 
-   
-    
+
+         // if user press delete after adding reject new----4
+
+    document.getElementById('delete-btn-5').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
+
 })
 
 
@@ -381,51 +1078,188 @@ document.getElementById('interview-btn-6').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+
+        // If user press reject button after pressing interview button ...new---1
+
+    document.getElementById('reject-btn-6').addEventListener('click', function () {
+
+        card6.classList.remove('border-l-4', 'border-l-green-400');
+        card6.classList.add('border-l-4', 'border-l-red-400')
+        sb6.innerText = 'REJECTED';
+
+        sb6.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb6.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate6);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
+
+
+
+        interviewShowingBtn.addEventListener('click', function () {
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+        })
+
+
+
+
+
+    })
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
+
+             // if user press reject button in interview showing button section new ----2
+
+
+        document.getElementById('reject-btn-6').addEventListener('click', function () {
+
+            card6.classList.remove('border-l-4', 'border-l-green-400');
+            card6.classList.add('border-l-4', 'border-l-red-400')
+            sb6.innerText = 'REJECTED';
+
+            sb6.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb6.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate6);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
         noJobAvailable.classList.add('hidden');
-        
-
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
 
 
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+
+
+                  // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-6').addEventListener('click', function () {
+
+                card6.classList.remove('border-l-4', 'border-l-green-400');
+                card6.classList.add('border-l-4', 'border-l-red-400')
+                sb6.innerText = 'REJECTED';
+
+                sb6.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb6.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate6);
+
+                interviewStore.classList.add('hidden');
+
+                rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
         })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
+        document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
             interviewStore.classList.add('hidden');
 
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
+            totalJobCount.innerText = `${interviewStore.children.length - interviewStore.children.length} Jobs`;
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+            document.getElementById('interview-showing-btn').addEventListener('click', function () {
                 interviewStore.classList.remove('hidden');
             })
 
 
 
-            
 
-            
+
+
 
 
 
         })
-    } 
+    }
 
 
 
     )
 
-   
-    
+
+          // if user press delete after adding reject new----4
+
+    document.getElementById('delete-btn-6').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
+
+
 })
 
 
@@ -446,51 +1280,188 @@ document.getElementById('interview-btn-7').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+         // If user press reject button after pressing interview button ...new---1
+
+    document.getElementById('reject-btn-7').addEventListener('click', function () {
+
+        card7.classList.remove('border-l-4', 'border-l-green-400');
+        card7.classList.add('border-l-4', 'border-l-red-400')
+        sb7.innerText = 'REJECTED';
+
+        sb7.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb7.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate7);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
+
+
+
+        interviewShowingBtn.addEventListener('click', function () {
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+        })
+
+
+
+
+
+    })
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
+
+
+               // if user press reject button in interview showing button section new ----2
+
+
+        document.getElementById('reject-btn-7').addEventListener('click', function () {
+
+            card7.classList.remove('border-l-4', 'border-l-green-400');
+            card7.classList.add('border-l-4', 'border-l-red-400')
+            sb7.innerText = 'REJECTED';
+
+            sb7.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb7.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate7);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
         noJobAvailable.classList.add('hidden');
-        
-
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
 
 
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+
+
+                    // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-7').addEventListener('click', function () {
+
+                card7.classList.remove('border-l-4', 'border-l-green-400');
+                card7.classList.add('border-l-4', 'border-l-red-400')
+                sb7.innerText = 'REJECTED';
+
+                sb7.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb7.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate7);
+
+                interviewStore.classList.add('hidden');
+
+                rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
         })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
+        document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
             interviewStore.classList.add('hidden');
 
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
+            totalJobCount.innerText = `${interviewStore.children.length - interviewStore.children.length} Jobs`;
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+            document.getElementById('interview-showing-btn').addEventListener('click', function () {
                 interviewStore.classList.remove('hidden');
             })
 
 
 
-            
 
-            
+
+
 
 
 
         })
-    } 
+    }
 
 
 
     )
 
-   
-    
+
+          // if user press delete after adding reject new----4
+
+    document.getElementById('delete-btn-7').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
+
+
 })
 
 
@@ -513,51 +1484,188 @@ document.getElementById('interview-btn-8').addEventListener('click', function ()
     // allCards.append(divCreate)
 
 
-    interviewCount.innerText = interviewStore.children.length ;
+    interviewCount.innerText = interviewStore.children.length;
+
+
+       // If user press reject button after pressing interview button ...new---1
+
+    document.getElementById('reject-btn-8').addEventListener('click', function () {
+
+        card8.classList.remove('border-l-4', 'border-l-green-400');
+        card8.classList.add('border-l-4', 'border-l-red-400')
+        sb8.innerText = 'REJECTED';
+
+        sb8.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+        sb8.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+        rejectStore.append(divCreate8);
+
+        // interviewStore.classList.add('hidden');
+
+        rejectStore.classList.remove('hidden');
+
+        interviewCount.innerText = interviewStore.children.length;
+        rejectedCount.innerText = rejectStore.children.length;
+
+
+
+        interviewShowingBtn.addEventListener('click', function () {
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${rejectStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+        })
+
+
+
+
+
+    })
 
 
     document.getElementById('interview-showing-btn').addEventListener('click', function (event) {
 
+
+
+              // if user press reject button in interview showing button section new ----2
+
+
+        document.getElementById('reject-btn-8').addEventListener('click', function () {
+
+            card8.classList.remove('border-l-4', 'border-l-green-400');
+            card8.classList.add('border-l-4', 'border-l-red-400')
+            sb8.innerText = 'REJECTED';
+
+            sb8.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+            sb8.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+            rejectStore.append(divCreate8);
+
+            rejectStore.classList.add('hidden');
+
+            //  rejectStore.classList.remove('hidden') ;
+
+            if (interviewStore.children.length === 0) {
+
+                noJobAvailable.classList.remove('hidden');
+                totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
+
+
+            }
+
+            else {
+                interviewStore.classList.remove('hidden');
+                rejectStore.classList.add('hidden')
+            }
+
+            rejectedShowingBtn.addEventListener('click', function () {
+
+                rejectStore.classList.remove('hidden')
+
+            })
+
+
+
+            interviewCount.innerText = interviewStore.children.length;
+            rejectedCount.innerText = rejectStore.children.length;
+
+
+        })
+
         noJobAvailable.classList.add('hidden');
-        
-
-        totalJobCount.innerText =  `${interviewStore.children.length} of 8 Jobs`
 
 
+        totalJobCount.innerText = `${interviewStore.children.length} of 8 Jobs`
 
-        document.getElementById('all-showing-btn').addEventListener('click' , function(){
+
+
+        document.getElementById('all-showing-btn').addEventListener('click', function () {
 
             interviewStore.classList.remove('hidden');
-            
+
             totalJobCount.innerText = `${Number(total.innerText)} Jobs `
+
+
+                     // after visit all showing section if user click reject in all section new ----3
+
+            document.getElementById('reject-btn-8').addEventListener('click', function () {
+
+                card8.classList.remove('border-l-4', 'border-l-green-400');
+                card8.classList.add('border-l-4', 'border-l-red-400')
+                sb8.innerText = 'REJECTED';
+
+                sb8.classList.remove('btn', 'btn-outline', 'btn-accent', 'bg-green-100');
+                sb8.classList.add('btn', 'btn-dash', 'btn-secondary', 'bg-red-200')
+
+                rejectStore.append(divCreate);
+
+                interviewStore.classList.add('hidden');
+
+                rejectStore.classList.remove('hidden');
+
+                totalJobCount.innerText = `${Number(total.innerText)} Jobs ` ;
+
+                interviewCount.innerText = interviewStore.children.length;
+                rejectedCount.innerText = rejectStore.children.length;
+
+
+
+
+            })
         })
-        document.getElementById('rejected-showing-btn').addEventListener('click' , function(){
-            
+        document.getElementById('rejected-showing-btn').addEventListener('click', function () {
+
             interviewStore.classList.add('hidden');
 
-            totalJobCount.innerText =  `${interviewStore.children.length - interviewStore.children.length } Jobs`;
+            totalJobCount.innerText = `${interviewStore.children.length - interviewStore.children.length} Jobs`;
 
-            document.getElementById('interview-showing-btn').addEventListener('click' , function(){
+            document.getElementById('interview-showing-btn').addEventListener('click', function () {
                 interviewStore.classList.remove('hidden');
             })
 
 
 
-            
 
-            
+
+
 
 
 
         })
-    } 
+    }
 
 
 
     )
 
-   
-    
+    // / if user press delete after adding reject new----4
+
+    document.getElementById('delete-btn-8').addEventListener('click' , function(){
+
+        if(interviewStore.children.length > 0){
+            interviewCount.innerText = interviewStore.children.length - 1 ;
+        }
+
+        rejectedCount.innerText = rejectedCount.innerText ;
+
+
+         
+    })
+
+
+
+
+
 })
 
 
@@ -565,7 +1673,7 @@ document.getElementById('interview-btn-8').addEventListener('click', function ()
 
 
 
- 
+
 
 
 
